@@ -27,6 +27,7 @@ binding=DataBindingUtil.setContentView(this,R.layout.activity_base_holder)
         viewPagerAdapter=ViewPagerAdapter(getSupportFragmentManager())
 
 
+
         viewPagerAdapter.addFrag(SongsFragment.newInstance(),"1")
         viewPagerAdapter.addFrag(ArtistsFragment.newInstance(),"1")
         viewPagerAdapter.addFrag(FavSongsFragment.newInstance(),"1")
