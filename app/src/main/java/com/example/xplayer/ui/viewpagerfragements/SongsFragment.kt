@@ -13,6 +13,12 @@ import com.example.xplayer.R
  * A simple [Fragment] subclass.
  */
 class SongsFragment : Fragment() {
+    companion object {
+
+        fun newInstance(): SongsFragment {
+            return SongsFragment()
+        }
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

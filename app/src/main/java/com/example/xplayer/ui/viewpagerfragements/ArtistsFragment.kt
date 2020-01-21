@@ -13,7 +13,12 @@ import com.example.xplayer.R
  * A simple [Fragment] subclass.
  */
 class ArtistsFragment : Fragment() {
+    companion object {
 
+        fun newInstance(): ArtistsFragment {
+            return ArtistsFragment()
+        }
+    }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
