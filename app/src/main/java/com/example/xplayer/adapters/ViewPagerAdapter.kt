@@ -7,8 +7,8 @@ import androidx.viewpager2.adapter.FragmentStateAdapter
 
 class ViewPagerAdapter(fm: FragmentManager) : FragmentStatePagerAdapter(fm,BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT ){
 
-     val  mFragmentList:ArrayList<Fragment>? = null
-     val  mFragmentTitleList:ArrayList<String>? = null
+     val  mFragmentList:ArrayList<Fragment>? = arrayListOf()
+     val  mFragmentTitleList:ArrayList<String>? = arrayListOf()
     override fun getItem(position: Int): Fragment {
 
             return mFragmentList!!.get(position)
@@ -24,18 +24,18 @@ class ViewPagerAdapter(fm: FragmentManager) : FragmentStatePagerAdapter(fm,BEHAV
         else return 0
     }
     public fun addFrag(fragment: Fragment,title:String){
-        if (mFragmentList != null) {
-            mFragmentList.add(fragment)
-        }
-        if (mFragmentTitleList != null) {
-            mFragmentTitleList.add(title)
-        }
+
+            mFragmentList!!.add(fragment)
+
+
+            mFragmentTitleList!!.add(title)
+
     }
 
     override fun getPageTitle(position: Int): CharSequence? {
         if (mFragmentTitleList != null) {
             return mFragmentTitleList.get(position)
         }
-        else return ""
+        else return "xxxx"
     }
 }

@@ -2,12 +2,16 @@ package com.example.xplayer.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.ViewModelProviders
 import com.example.xplayer.R
 import com.example.xplayer.adapters.ViewPagerAdapter
 import com.example.xplayer.databinding.ActivityBaseHolderBinding
 import com.example.xplayer.model.Song
+import com.example.xplayer.ui.basefrags.HomeFragment
 import com.example.xplayer.ui.viewpagerfragements.AlbumsFragment
 import com.example.xplayer.ui.viewpagerfragements.ArtistsFragment
 import com.example.xplayer.ui.viewpagerfragements.FavSongsFragment
@@ -21,17 +25,25 @@ private lateinit var viewModel:BaseHolderViewModel
     lateinit var viewPagerAdapter:ViewPagerAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        overridePendingTransition(R.anim.abc_fade_in,R.anim.abc_fade_out)
 binding=DataBindingUtil.setContentView(this,R.layout.activity_base_holder)
         viewModel=ViewModelProviders.of(this).get(BaseHolderViewModel::class.java)
         binding.viewModel=viewModel
-        viewPagerAdapter=ViewPagerAdapter(getSupportFragmentManager())
+
+        supportFragmentManager.inTransaction {
+
+            add(R.id.fragment_continer_cl, HomeFragment.newintance(""))
+        }
 
 
-
-        viewPagerAdapter.addFrag(SongsFragment.newInstance(),"1")
-        viewPagerAdapter.addFrag(ArtistsFragment.newInstance(),"1")
-        viewPagerAdapter.addFrag(FavSongsFragment.newInstance(),"1")
-        viewPager.adapter=viewPagerAdapter;
 
     }
+
+    inline fun FragmentManager.inTransaction(func: FragmentTransaction.() -> Unit) {
+        val fragmentTransaction = beginTransaction()
+        fragmentTransaction.func()
+        fragmentTransaction.commit()
+    }
+
+
 }
