@@ -6,6 +6,9 @@
     <data>
 
 
+        <variable
+            name="adapter"
+            type="com.example.xplayer.adapters.ViewPagerAdapter" />
 
             <variable
                 name="viewModel"
@@ -13,100 +16,28 @@
 
     </data>
 
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
 
         tools:context=".ui.BaseHolderActivity">
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/app_bar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/x_palyer"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/fragment_continer_cl"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#ffffff"
-            app:layout_scrollFlags="scroll|enterAlways|snap">
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/music_info_cl"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:id="@+id/title_text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="10dp"
-
-                    android:text="X player"
-                    android:textAllCaps="false"
-                    android:textColor="#FF4F00"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <ImageButton
-                    android:id="@+id/search_btn"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginRight="16dp"
-                    android:layout_marginBottom="8dp"
-                    android:background="@android:drawable/ic_search_category_default"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-        </androidx.appcompat.widget.Toolbar>
-
-        <com.google.android.material.tabs.TabLayout
-            android:id="@+id/tabs"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-
-            android:layoutDirection="ltr"
-            android:scrollbarSize="3dp"
-            app:tabGravity="fill"
-            app:tabIndicatorColor="@android:color/white"
-            app:tabMode="scrollable"
-            app:tabSelectedTextColor="@android:color/white"
-            app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"
-            app:tabTextColor="@android:color/darker_gray">
-
-
-        </com.google.android.material.tabs.TabLayout>
-
-    </com.google.android.material.appbar.AppBarLayout>
-
-        <androidx.viewpager.widget.ViewPager
-            android:id="@+id/viewPager"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-
-            app:layout_behavior="@string/appbar_scrolling_view_behavior">
-
-        </androidx.viewpager.widget.ViewPager>
-
+        </androidx.constraintlayout.widget.ConstraintLayout>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/music_info_cl"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_gravity="bottom"
-android:onClick="@{() -> viewModel.infoClClicked()}"
+        android:onClick="@{() -> viewModel.infoClClicked()}"
 
         app:layout_constraintBottom_toTopOf="@+id/toolbar_cl"
         app:layout_constraintEnd_toEndOf="parent"
@@ -173,6 +104,6 @@ android:onClick="@{() -> viewModel.infoClClicked()}"
         <!--app:itemTextColor="@drawable/bottom_navigation_colors"-->
         <!--app:menu="@menu/bottom_app_bar_menu"-->
         <!--android:layout_gravity="bottom"/>-->
-</androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
