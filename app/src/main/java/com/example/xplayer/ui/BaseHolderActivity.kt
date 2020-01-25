@@ -9,6 +9,7 @@ import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.ViewModelProviders
 import com.example.xplayer.R
 import com.example.xplayer.adapters.ViewPagerAdapter
+import com.example.xplayer.controller.SongLab
 import com.example.xplayer.databinding.ActivityBaseHolderBinding
 import com.example.xplayer.model.Song
 import com.example.xplayer.ui.basefrags.HomeFragment
@@ -29,7 +30,9 @@ private lateinit var viewModel:BaseHolderViewModel
 binding=DataBindingUtil.setContentView(this,R.layout.activity_base_holder)
         viewModel=ViewModelProviders.of(this).get(BaseHolderViewModel::class.java)
         binding.viewModel=viewModel
-
+        SongLab.mContext=this
+        SongLab.setAllSongList(applicationContext)
+Log.e("xx","${SongLab.mAllSong.size}")
         supportFragmentManager.inTransaction {
 
             add(R.id.fragment_continer_cl, HomeFragment.newintance(""))

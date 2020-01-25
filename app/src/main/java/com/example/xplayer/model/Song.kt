@@ -1,6 +1,6 @@
 package com.example.xplayer.model
 
-class Song {
+class Song(mSongPath:String) {
     var mSongName:String=""
     var mSongArtWorkPath:String=""
     var  mAlbumArtWorkPath:String=""

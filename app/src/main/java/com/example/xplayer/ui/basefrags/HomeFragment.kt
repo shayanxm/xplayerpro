@@ -13,12 +13,13 @@ import androidx.lifecycle.ViewModelProviders
 import com.example.xplayer.R
 import com.example.xplayer.adapters.ViewPagerAdapter
 import com.example.xplayer.databinding.ActivityBaseHolderBinding
+import com.example.xplayer.databinding.FragmentHomexBinding
 import com.example.xplayer.ui.viewpagerfragements.ArtistsFragment
 import com.example.xplayer.ui.viewpagerfragements.FavSongsFragment
 import com.example.xplayer.ui.viewpagerfragements.SongsFragment
 import com.example.xplayer.viewmodel.BaseHolderViewModel
 import com.example.xplayer.viewmodel.HomeViewModel
-import kotlinx.android.synthetic.main.fragment_home.*
+import kotlinx.android.synthetic.main.fragment_homex.*
 
 /**
  * A simple [Fragment] subclass.
@@ -33,18 +34,17 @@ class HomeFragment : Fragment() {
         }
     }
     private lateinit var viewModel: HomeViewModel
-    lateinit var binding: HomeFragmentBinding
+    lateinit var binding: FragmentHomexBinding
     lateinit var viewPagerAdapter: ViewPagerAdapter
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
 
         binding =
-            DataBindingUtil.inflate(inflater,R.layout.fragment_home, container,false)
-
+            DataBindingUtil.inflate(inflater,R.layout.fragment_homex, container,false)
 
         viewModel = ViewModelProviders.of(this).get(HomeViewModel()::class.java)
-      //  binding.viewModel=viewModel
+      binding.viewModel=viewModel
 
         return binding.root
 
