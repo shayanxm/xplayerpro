@@ -1,4 +1,4 @@
-package com.example.xplayer.ui.basefrags
+package com.example.xplayer.ui.basefrags.home
 
 
 import android.os.Bundle
@@ -7,18 +7,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.ViewModelProviders
 
 import com.example.xplayer.R
 import com.example.xplayer.adapters.ViewPagerAdapter
-import com.example.xplayer.databinding.ActivityBaseHolderBinding
 import com.example.xplayer.databinding.FragmentHomexBinding
-import com.example.xplayer.ui.viewpagerfragements.ArtistsFragment
-import com.example.xplayer.ui.viewpagerfragements.FavSongsFragment
-import com.example.xplayer.ui.viewpagerfragements.SongsFragment
-import com.example.xplayer.viewmodel.BaseHolderViewModel
-import com.example.xplayer.viewmodel.HomeViewModel
+import com.example.xplayer.ui.viewpagerfragements.artists.ArtistsFragment
+import com.example.xplayer.ui.viewpagerfragements.favsongs.FavSongsFragment
+import com.example.xplayer.ui.viewpagerfragements.songs.SongsFragment
 import kotlinx.android.synthetic.main.fragment_homex.*
 
 /**

@@ -12,7 +12,7 @@
 
             <variable
                 name="viewModel"
-                type="com.example.xplayer.viewmodel.BaseHolderViewModel" />
+                type="com.example.xplayer.ui.viewpagerfragements.baseholder.BaseHolderViewModel" />
 
     </data>
 
@@ -20,7 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
 
-        tools:context=".ui.BaseHolderActivity">
+        tools:context=".ui.viewpagerfragements.baseholder.BaseHolderActivity">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/fragment_continer_cl"

@@ -1,24 +1,23 @@
-package com.example.xplayer.controller
+package fakhteh.fanavaran.mydagger.di.component.moduel
 
 import android.content.Context
 import android.provider.BaseColumns
 import android.provider.MediaStore
 import android.util.Log
 import com.example.xplayer.model.Song
-import java.util.ArrayList
+import dagger.Module
+import dagger.Provides
 
-object SongLab {
+@Module
+class SongLab {
     lateinit var mAllSong:List<Song>
-    lateinit var mContext:Context
-init {
-Log.e("xx","initniinglab")
 
-}
-    fun setAllSongList(context:Context){
+@Provides
+    fun setAllSongList( context:Context):List<Song>{
         val uri = MediaStore.Audio.Media.EXTERNAL_CONTENT_URI
         val selection = MediaStore.Audio.Media.IS_MUSIC + "!= 0"
         val sortOrder = MediaStore.Audio.Media.TITLE + " ASC"
-        val cr = mContext.getContentResolver()
+        val cr = context.getContentResolver()
         val cur = cr.query(uri, null, selection, null, sortOrder)
         var count = 0
         val names = ArrayList<String>()
@@ -80,8 +79,8 @@ Log.e("xx","initniinglab")
 
             }
         }
+    Log.e("xx","${allSongs.size}")
         mAllSong = allSongs
-
+return allSongs
     }
-
 }

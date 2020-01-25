@@ -1,4 +1,4 @@
-package com.example.xplayer.ui.basefrags
+package com.example.xplayer.ui.basefrags.music
 
 import android.content.Context
 import android.net.Uri

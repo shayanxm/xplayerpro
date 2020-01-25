@@ -1,4 +1,4 @@
-package com.example.xplayer.ui.basefrags
+package com.example.xplayer.ui.viewpagerfragements.songs
 
 
 import android.os.Bundle
@@ -12,14 +12,20 @@ import com.example.xplayer.R
 /**
  * A simple [Fragment] subclass.
  */
-class IdentifyFragment : Fragment() {
+class SongsFragment : Fragment() {
+    companion object {
+
+        fun newInstance(): SongsFragment {
+            return SongsFragment()
+        }
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_identify, container, false)
+        return inflater.inflate(R.layout.fragment_songs, container, false)
     }
 
 

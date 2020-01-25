@@ -1,4 +1,4 @@
-package com.example.xplayer.viewmodel
+package com.example.xplayer.ui.basefrags.home
 
 import android.util.Log
 import androidx.databinding.ObservableField
