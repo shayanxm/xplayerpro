@@ -2,6 +2,7 @@ package fakhteh.fanavaran.mydagger.di.component.commp
 
 import com.example.xplayer.di.scopes.CustomApplicationScope
 import com.example.xplayer.ui.viewpagerfragements.baseholder.BaseHolderViewModel
+import com.example.xplayer.ui.viewpagerfragements.songs.SongsViewModel
 import dagger.Component
 
 import fakhteh.fanavaran.mydagger.di.component.moduel.AppModuel
@@ -12,5 +13,5 @@ import fakhteh.fanavaran.mydagger.di.component.moduel.SongLab
 interface SongLabComponent {
 
     fun injectViewModel(baseHolderViewModel: BaseHolderViewModel)
-
+    fun injectViewModelx(songsViewModel: SongsViewModel)
 }

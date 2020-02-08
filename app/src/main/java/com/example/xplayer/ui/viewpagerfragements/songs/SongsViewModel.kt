@@ -1,11 +1,14 @@
 package com.example.xplayer.ui.viewpagerfragements.songs
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 import com.example.xplayer.adapters.MusicsAdapter
 import com.example.xplayer.model.Song
+import java.lang.Exception
 import javax.inject.Inject
 
-class SongsViewModel {
+class SongsViewModel : ViewModel() {
     @Inject
     lateinit var mSongLab: List<Song>
     val musicListAdapter: MusicsAdapter = MusicsAdapter()
@@ -16,7 +19,9 @@ class SongsViewModel {
         return songTitle
     }
     init {
-        musicListAdapter.updatePostList(mSongLab);
+
+            musicListAdapter.updatePostList(mSongLab)
+
     }
     fun getSongName(): MutableLiveData<String> {
         return songName
@@ -29,4 +34,7 @@ class SongsViewModel {
         songTitle.value = weatherData.mSongName
         artisName.value = weatherData.mAristName
     }
+    fun test(){  Log.e("xzzz","${mSongLab.size}")
+        Log.e("xzzz","${mSongLab.size} , ${mSongLab.get(2).mSongName}")}
+
 }
