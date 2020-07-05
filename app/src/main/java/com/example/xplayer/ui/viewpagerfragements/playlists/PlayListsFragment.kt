@@ -1,4 +1,4 @@
-package com.example.xplayer.ui.viewpagerfragements
+package com.example.xplayer.ui.viewpagerfragements.playlists
 
 
 import android.os.Bundle
