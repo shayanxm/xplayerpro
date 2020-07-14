@@ -24,7 +24,7 @@ private  var songList:List<Song> = emptyList()
     override fun getItemCount(): Int=songList.size
 
     override fun onBindViewHolder(holder: ViewHodler, position: Int) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        holder.bind(songList.get(position))
     }
     fun setAdapter(list:List<Song>){
         this.songList=list

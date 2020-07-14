@@ -11,7 +11,7 @@ import javax.inject.Inject
 class SongsViewModel : ViewModel() {
     @Inject
     lateinit var mSongLab: List<Song>
-    val musicListAdapter: MusicsAdapter = MusicsAdapter()
+//    val musicListAdapter: MusicsAdapter = MusicsAdapter()
     private val songTitle = MutableLiveData<String>()
     private val songName = MutableLiveData<String>()
     private val artisName = MutableLiveData<String>()

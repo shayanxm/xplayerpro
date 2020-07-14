@@ -9,15 +9,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
 
 import com.example.xplayer.R
+import com.example.xplayer.adapters.MusicAdapterx
 import com.example.xplayer.data.Singleton
 import com.example.xplayer.databinding.ActivityBaseHolderBinding
 import com.example.xplayer.databinding.FragmentSongsBinding
 import com.example.xplayer.model.Song
 import fakhteh.fanavaran.mydagger.di.component.commp.DaggerSongLabComponent
 import fakhteh.fanavaran.mydagger.di.component.moduel.AppModuel
+import kotlinx.android.synthetic.main.fragment_songs.view.*
 import javax.inject.Inject
 
 /**
@@ -31,7 +36,11 @@ class SongsFragment : Fragment() {
     lateinit var AppContext: Context
     lateinit var binding:FragmentSongsBinding
     private lateinit var viewModel: SongsViewModel
+
+    var fragmentView:View?=null
+    private var songAdapterx:MusicAdapterx?=null
     companion object {
+
 
         fun newInstance(): SongsFragment {
             return SongsFragment()
@@ -52,7 +61,10 @@ Log.e("sizing","${Singleton.mAllSong.size}")
 
         Log.e("songlabxx","xxxxxxxxxxx")
 
-
+fragmentView=binding?.root
+        initAdapter()
+        setAdapter()
+        fetchRetroInfo()
 //        val applicationContextModule = ApplicationContextModule(requireContext().applicationContext)
 //        DaggerDataBaseComponent.builder().applicationContextModule(applicationContextModule).build().injectTaskVm(viewModel)
         return binding.root
@@ -65,5 +77,34 @@ Log.e("sizing","${Singleton.mAllSong.size}")
         DaggerSongLabComponent.builder().appModuel(applicationContextModule).build().injectViewModelx(viewModel)
     }
 
+
+
+    fun fetchRetroInfo(){
+        songAdapterx?.setAdapter(Singleton.mAllSong)
+//        retroViewModel.postInfoLiveData?.observe(this,object: Observer<List<PostInfo>> {
+//            override fun onChanged(t: List<PostInfo>?) {
+//                t?.apply {
+//                    listAdapter?.setAdapterList(t)
+//                }
+//
+//
+//            }
+//        })
+    }
+
+    private fun setAdapter(){
+        Log.e("adaptindx","ada")
+       fragmentView?.sont_list_rv?.apply {
+            layoutManager = LinearLayoutManager(activity)
+            addItemDecoration(DividerItemDecoration(activity, DividerItemDecoration.VERTICAL))
+            adapter = songAdapterx
+        }
+
+    }
+
+    private fun initAdapter(){
+        Log.e("adaptindx","ada")
+        songAdapterx = MusicAdapterx(this@SongsFragment.requireActivity())
+    }
 
 }
