@@ -12,6 +12,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProviders
 
 import com.example.xplayer.R
+import com.example.xplayer.data.Singleton
 import com.example.xplayer.databinding.ActivityBaseHolderBinding
 import com.example.xplayer.databinding.FragmentSongsBinding
 import com.example.xplayer.model.Song
@@ -40,6 +41,7 @@ class SongsFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         Log.e("songlabxx","xxxxxxxxxxx")
+Log.e("sizing","${Singleton.mAllSong.size}")
     }
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {

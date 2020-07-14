@@ -20,7 +20,7 @@ class SongsViewModel : ViewModel() {
     }
     init {
 
-            musicListAdapter.updatePostList(mSongLab)
+           // musicListAdapter.updatePostList(mSongLab)
 
     }
     fun getSongName(): MutableLiveData<String> {
