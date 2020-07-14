@@ -1,6 +1,7 @@
 package com.example.xplayer.adapters
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
@@ -9,7 +10,7 @@ import com.example.xplayer.BR
 import com.example.xplayer.R
 import com.example.xplayer.databinding.SongListRowBinding
 import com.example.xplayer.model.Song
-import com.example.xplayer.util.SongListHandler
+import com.example.xplayer.handlers.SongListHandler
 
 class MusicAdapterx(var context: Context) : RecyclerView.Adapter<MusicAdapterx.ViewHodler>() {
     private var songList: List<Song> = emptyList()
@@ -28,6 +29,7 @@ class MusicAdapterx(var context: Context) : RecyclerView.Adapter<MusicAdapterx.V
     override fun onBindViewHolder(holder: ViewHodler, position: Int) {
         holder.bind(songList.get(position))
         bindView(holder, position)
+        Log.e("wdsfxc","sdfx2222")
     }
 
     fun bindView(holder: ViewHodler, position: Int) {
@@ -50,7 +52,7 @@ class MusicAdapterx(var context: Context) : RecyclerView.Adapter<MusicAdapterx.V
         fun bind(data: Any) {
             binding.setVariable(BR.vm, data)
             binding.executePendingBindings()
-
+            Log.e("wdsfxc","sdfxxxxxxx")
         }
     }
 

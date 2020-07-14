@@ -10,7 +10,7 @@ import com.example.xplayer.R
 import com.example.xplayer.databinding.SongListRowBinding
 import com.example.xplayer.model.Song
 import com.example.xplayer.ui.viewpagerfragements.songs.SongsViewModel
-
+@Deprecated(message = "use MusicAdapterx")
 class MusicsAdapter : RecyclerView.Adapter<MusicsAdapter.MyViewHolder>() {
     private lateinit var mainList:List<Song>
 

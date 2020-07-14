@@ -12,6 +12,7 @@ import androidx.lifecycle.ViewModelProviders
 import com.example.xplayer.R
 import com.example.xplayer.adapters.ViewPagerAdapter
 import com.example.xplayer.databinding.FragmentHomexBinding
+import com.example.xplayer.ui.viewpagerfragements.albums.AlbumsFragment
 import com.example.xplayer.ui.viewpagerfragements.artists.ArtistsFragment
 import com.example.xplayer.ui.viewpagerfragements.favsongs.FavSongsFragment
 import com.example.xplayer.ui.viewpagerfragements.songs.SongsFragment
@@ -53,11 +54,12 @@ class HomeFragment : Fragment() {
     private fun setViewPagerUp() {
         viewPagerAdapter = ViewPagerAdapter(activity!!.getSupportFragmentManager())
         viewPagerAdapter.addFrag(SongsFragment.newInstance(), "SONGS")
+        viewPagerAdapter.addFrag(AlbumsFragment.newInstance(), "Albums")
         viewPagerAdapter.addFrag(ArtistsFragment.newInstance(), "ARTIST")
-        viewPagerAdapter.addFrag(FavSongsFragment.newInstance(), "TRACKS")
+
         viewPagerAdapter.addFrag(FavSongsFragment.newInstance(), "FAVORITES")
-        viewPagerAdapter.addFrag(FavSongsFragment.newInstance(), "FAVORITES")
-        viewPagerAdapter.addFrag(FavSongsFragment.newInstance(), "FAVORITES")
+        viewPagerAdapter.addFrag(FavSongsFragment.newInstance(), "PLAYLISTS")
+        viewPagerAdapter.addFrag(FavSongsFragment.newInstance(), "EXTRA")
         viewPager.adapter = viewPagerAdapter
         tabs.setupWithViewPager(viewPager)
     }
