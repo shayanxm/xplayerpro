@@ -110,7 +110,7 @@ class MusicsAdapter : RecyclerView.Adapter<MusicsAdapter.MyViewHolder>() {
         fun bind(post:Song){
             viewModel.bind(post)
 
-            binding.vm = viewModel
+          //  binding.vm = viewModel
         }
         // lateinit var mainList :List<String>
         lateinit var context: Context

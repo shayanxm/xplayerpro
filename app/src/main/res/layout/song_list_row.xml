@@ -7,7 +7,7 @@
 
         <variable
             name="vm"
-            type="com.example.xplayer.ui.viewpagerfragements.songs.SongsViewModel" />
+            type="com.example.xplayer.model.Song" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -31,7 +31,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
             android:layout_marginTop="4dp"
-            android:text="@{vm.songName}"
+            android:text="@{vm.mSongName}"
             app:layout_constraintStart_toEndOf="@+id/song_image_iv"
             app:layout_constraintTop_toTopOf="@+id/song_image_iv" />
 
@@ -42,7 +42,7 @@
             android:layout_marginStart="24dp"
             android:layout_marginTop="4dp"
             android:layout_marginBottom="8dp"
-            android:text="@{vm.artistName}"
+            android:text="@{vm.mAristName}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@+id/song_image_iv"
             app:layout_constraintTop_toBottomOf="@+id/song_image_iv" />
