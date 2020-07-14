@@ -76,6 +76,8 @@ init {
 
                     allSongs.add(song)
                     i++
+                    Log.e("pathis",song.mSongArtWorkPath)
+                    Log.e("pathis2",song.mAlbumArtWorkPath)
                 }
 
             }

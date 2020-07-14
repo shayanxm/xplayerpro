@@ -7,7 +7,7 @@ import android.util.Log
 import com.example.xplayer.model.Song
 import dagger.Module
 import dagger.Provides
-
+@Deprecated(message = "changed they way providing list")
 @Module
 class SongLab {
     lateinit var mAllSong:List<Song>
